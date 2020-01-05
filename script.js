@@ -156,6 +156,52 @@ function evt (e) {
     renderToDo(textBlock);
 };
 
+function createTimeSlot () {
+    var inputDiv = document.createElement('div');
+    //inputDiv.textContent = "Div created by JS";
+    inputDiv.setAttribute('class', 'input-group');
+    inputDiv.setAttribute('id', 'inputGroup');
+    document.querySelector('.schedule').appendChild(inputDiv)
+
+    var inputGroupPrepend = document.createElement('div');
+    //inputGroupPrepend.textContent = 'another div created by JS'
+    inputGroupPrepend.setAttribute('class', 'input-group-prepend');
+    inputGroupPrepend.setAttribute('id', 'inputPrependGroup');
+    document.querySelector('#inputGroup').appendChild(inputGroupPrepend);
+
+    var hourTimeBlock = document.createElement('span');
+    hourTimeBlock.textContent = "6PM";
+    hourTimeBlock.setAttribute('class', 'hour time-block input-group-text');
+    hourTimeBlock.setAttribute('value', '6PM');
+    document.querySelector('#inputPrependGroup').appendChild(hourTimeBlock);
+
+    var inputField = document.createElement('input');
+    inputField.setAttribute('type', 'text');
+    inputField.setAttribute('id', 'sixP');
+    inputField.setAttribute('class', 'description form-control');
+    inputField.setAttribute('aria-label', 'With textarea');
+    inputField.setAttribute('data-name', '6PM');
+    inputField.setAttribute('value', '18');
+    document.querySelector('#inputGroup').appendChild(inputField);
+
+    var appendDivButton = document.createElement('div');
+    appendDivButton.setAttribute('class', 'input-group-append');
+    appendDivButton.setAttribute('id', 'inputGroupAppend');
+    document.querySelector('#inputGroup').appendChild(appendDivButton);
+
+    var appendButton = document.createElement('button');
+    appendButton.setAttribute('value', 'sixP');
+    appendButton.setAttribute('id', '6PMBtn');
+    appendButton.setAttribute('class', 'saveBtn btn btn-outline-secondary');
+    appendButton.setAttribute('type', 'button')
+    document.querySelector('#inputGroupAppend').appendChild(appendButton);
+    appendButton.innerHTML='<i class="fas fa-save"></i>';
+}
+
+
+createTimeSlot();
+
+
 nineAMbtnEL.addEventListener("click", evt);
 tenAMbtnEL.addEventListener("click", evt);
 elevenAMbtnEL.addEventListener("click", evt);
